@@ -1,0 +1,337 @@
+/**
+  ******************************************************************************
+  * @file      HTU20.x
+  * @brief     HTU20 function
+  * @cpu       STM32F051
+  * @compiler  Keil uVision V4.74
+  * @author    MetalSeed
+  * @copyright WSHHB
+  * @version   V1.0.0
+  * @date      18-Sept-2014
+  * @modifydate20-Sept-2014
+  ******************************************************************************
+  * @attention
+  */
+#include "include.h"
+
+
+
+/*================================================================
+                           IIC address
+================================================================*/
+#define SHT20ADDR      0x80
+
+/*================================================================
+                 ACK  and  NACK  defination
+================================================================*/
+#define ACK            1
+#define NACK           0
+
+/*================================================================
+                       HTU20D Command Code
+================================================================*/
+/*
+  Command                         Code              Comment
+  Trigger Temperature Measurement 0xe3              Hold master
+  Trigger Humidity Measurement    0xe5              Hold master
+  Trigger Temperature Measuremeng 0xf3              No Hold master
+  Trigger Humidity Measurement    0xf5              No Hold master
+  Write user register             0xe6
+  Read user register              0xe7
+  Soft Reset                      0xfe
+*/
+#define SOFT_RESET      0xfe
+#define READ_REGISTER   0xe7
+#define WRITE_REGISTER  0xe6
+#define TRIGGER_TEMP    0xf3
+#define TRIGGER_HUMI    0xf5
+
+/*================================================================
+                    HTU20 operate interface
+================================================================*/
+#define HTU20_SDA         GPIO_ReadInputDataBit(GPIOD,GPIO_Pin_12)
+#define HTU20_SCL         GPIO_ReadInputDataBit(GPIOD,GPIO_Pin_11)
+
+/*
+操作对象为FM24C02
+*/
+#define ADDR_24CXX       0xA0
+#define SCLH        scl3_h()
+#define SCLL        scl3_l()
+   
+#define SDAH        sda3_h()
+#define SDAL        sda3_l()
+#define SCLread     GPIO_ReadInputDataBit(GPIOD,GPIO_Pin_11)
+#define SDAread     GPIO_ReadInputDataBit(GPIOD,GPIO_Pin_12)
+
+
+
+
+
+
+void scl3_h()
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	
+	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IN;//输出
+	GPIO_InitStructure.GPIO_OType=GPIO_OType_OD;  //推挽输出
+	GPIO_InitStructure.GPIO_PuPd=GPIO_PuPd_UP;  //上拉
+	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_100MHz; //高速GPIO
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
+}
+
+void scl3_l()
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	
+	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_OUT;//输出
+	GPIO_InitStructure.GPIO_OType=GPIO_OType_OD;  //推挽输出
+	GPIO_InitStructure.GPIO_PuPd=GPIO_PuPd_UP;  //上拉
+	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_100MHz; //高速GPIO
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
+    GPIO_ResetBits(GPIOD,GPIO_Pin_11);
+}
+
+
+void sda3_h()
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	
+	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IN;//输出
+	GPIO_InitStructure.GPIO_OType=GPIO_OType_OD;  //推挽输出
+	GPIO_InitStructure.GPIO_PuPd=GPIO_PuPd_UP;  //上拉
+	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_100MHz; //高速GPIO
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
+}
+
+void sda3_l()
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	
+	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_OUT;//输出
+	GPIO_InitStructure.GPIO_OType=GPIO_OType_OD;  //推挽输出
+	GPIO_InitStructure.GPIO_PuPd=GPIO_PuPd_UP;  //上拉
+	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_100MHz; //高速GPIO
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
+    GPIO_ResetBits(GPIOD,GPIO_Pin_12);
+}
+
+
+
+
+
+
+
+
+void I2C3_delay(void)
+{ 
+   u16 i=1000; //这里可以优化速度 ，经测试最低到5还能写入
+   while(i) 
+   { 
+     i--; 
+   } 
+}
+u8 I2C3_Start(void)
+{
+	
+	SDAH;
+     SCLH;
+     I2C3_delay();
+     if(!SDAread)return 0; //SDA线为低电平则总线忙,退出
+     SDAL;
+     I2C3_delay();
+     if(SDAread) return 0; //SDA线为高电平则总线出错,退出
+     SDAL;
+     I2C3_delay();
+     return 1;
+}
+void I2C3_Stop(void)
+{
+ SCLL;
+ I2C3_delay();
+ SDAL;
+ I2C3_delay();
+ SCLH;
+ I2C3_delay();
+ SDAH;
+ I2C3_delay();
+}
+void I2C3_Ack(void)
+{ 
+ SCLL;
+ I2C3_delay();
+ SDAL;
+ I2C3_delay();
+ SCLH;
+ I2C3_delay();
+ SCLL;
+ I2C3_delay();
+}
+void I2C3_NoAck(void)
+{ 
+ SCLL;
+ I2C3_delay();
+ SDAH;
+ I2C3_delay();
+ SCLH;
+ I2C3_delay();
+ SCLL;
+ I2C3_delay();
+}
+u8 I2C3_WaitAck(void)  //返回为:=1有ACK,=0无ACK
+{
+ SCLL;
+ I2C3_delay();
+ SDAH;   
+ I2C3_delay();
+ SCLH;
+ I2C3_delay();
+ if(SDAread)
+ {
+         SCLL;
+         return 0;
+ }
+ SCLL;
+ return 1;
+}
+void I2C3_SendByte(u8 SendByte) //数据从高位到低位//
+{
+    u8 i=8;
+    while(i--)
+    {
+       SCLL;
+       I2C3_delay();
+       if(SendByte&0x80)
+         SDAH;  
+       else 
+       SDAL;   
+       SendByte<<=1;
+       I2C3_delay();
+ SCLH;
+       I2C3_delay();
+    }
+    SCLL;
+}
+u8 I2C3_ReceiveByte(void) //数据从高位到低位//
+{ 
+    u8 i=8;
+    u8 ReceiveByte=0;
+   SDAH;    
+    while(i--)
+    {
+      ReceiveByte<<=1;      
+      SCLL;
+      I2C3_delay();
+      SCLH;
+      I2C3_delay(); 
+      if(SDAread)
+      {
+       ReceiveByte|=0x01;
+      }
+    }
+    SCLL;
+    return ReceiveByte;
+}
+/**
+  * @brief  soft reset by transmit reset command
+  * @retval None
+  */
+void I2cI2cI2cSoftReset(void)
+{
+  I2C3_Start();
+  I2C3_SendByte(SHT20ADDR & 0xfe);  //I2C address + write
+  I2C3_WaitAck();
+  I2C3_SendByte(SOFT_RESET);        //soft reset
+  I2C3_WaitAck();  
+  I2C3_Stop();
+}
+
+/**
+  * @brief  SET HTU20D resolution by write register
+  * @retval None
+  */
+void SET_Resolution(void)
+{
+  I2C3_Start();
+  I2C3_SendByte(SHT20ADDR & 0xfe);
+  if(I2C3_WaitAck() == ACK) //I2C address + write + ACK
+  {
+      I2C3_SendByte(WRITE_REGISTER);
+    if(I2C3_WaitAck() == ACK)
+    {
+        I2C3_SendByte(0x83);
+      if(I2C3_WaitAck() == ACK) ;       //设置分辨率   11bit RH% 测量时间：12ms(typ.)
+    }                                         //             11bit T℃ 测量时间：9ms(typ.)
+  }
+  I2C3_Stop();
+}
+
+/**
+  * @brief  read sht20's converted result
+  * @param  TempOrHumiCMD: operation command for temperature or humidity
+  * @retval None
+  */
+u16 ReadSht20(char TempOrHumiCMD)
+{
+  u16 temp;
+  u8 MSB,LSB;
+  u16 Humidity, Temperature;
+    u8 outtime=0;
+  SET_Resolution();
+  I2C3_Start();
+  I2C3_SendByte(0x80) ;
+  if(I2C3_WaitAck() != ACK)   return 0;   //I2C address + write + ACK
+  I2C3_SendByte(TempOrHumiCMD) ;  
+  if(I2C3_WaitAck() != ACK)   return 0;   
+    
+        
+    do
+      {
+          if(outtime++>200)     //超过1.2s
+              return 0;
+          I2C3_Start();
+          I2C3_SendByte(0x81) ;
+          delay_ms(6);          //延时6ms
+      } while(  I2C3_WaitAck()   == NACK); //I2C address + read + NACK
+
+  MSB = I2C3_ReceiveByte(); 
+    I2C3_Ack();
+  LSB = I2C3_ReceiveByte(); 
+    I2C3_Ack();
+  I2C3_ReceiveByte();
+    I2C3_NoAck();
+    
+   I2C3_Stop();                       //Checksum  + NACK      I2CStop();
+    LSB &= 0xfc;                                //Data (LSB) 的后两位在进行物理计算前前须置0
+   temp = (MSB << 8) + LSB;
+
+      if (TempOrHumiCMD == ((char)TRIGGER_HUMI))
+      {
+        /*-- calculate relative humidity [%RH] --*/
+        //equation: RH% = -6 + 125 * SRH/2^16
+          
+        Humidity = (temp * 1250) / 65536 - 60;
+          printf("DHT20湿度：%d\r\n",Humidity);
+        return Humidity;
+      }
+      else
+      {
+        /*-- calculate temperature [°C] --*/
+        //equation:T = -46.85 + 175.72 * ST/2^16
+        Temperature = ((temp * 17572) / 65536 - 4685)/10;
+          printf("DHT20温度：%d\r\n",Temperature);
+        return Temperature;
+      }
+
+}
+
+
+

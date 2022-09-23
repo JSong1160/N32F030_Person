@@ -1,0 +1,6 @@
+--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"
+-I.\RTE\_Target_1
+-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device
+-ID:\Keil_v5\ARM\CMSIS\Include
+--pd "__UVISION_VERSION SETA 529" --pd "N32G030 SETA 1" --pd "USE_STDPERIPH_DRIVER SETA 1"
+--list .\listings\startup_n32g030.lst --xref -o .\objects\startup_n32g030.o --depend .\objects\startup_n32g030.d "..\CMSIS\device\startup\startup_n32g030.s"

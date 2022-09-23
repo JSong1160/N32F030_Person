@@ -1,0 +1,18 @@
+--cpu Cortex-M0
+".\objects\system_n32g030.o"
+"..\CMSIS\device\HSI_Trim_Initail.lib"
+".\objects\startup_n32g030.o"
+".\objects\main.o"
+".\objects\n32g030_it.o"
+".\objects\delay.o"
+".\objects\led.o"
+".\objects\modbus_slave.o"
+".\objects\sht20.o"
+".\objects\init.o"
+".\objects\flash.o"
+".\objects\proc.o"
+".\objects\oled.o"
+--library_type=microlib --strict --scatter ".\Objects\N32G030F6S7.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\N32G030F6S7.map" -o .\Objects\N32G030F6S7.axf

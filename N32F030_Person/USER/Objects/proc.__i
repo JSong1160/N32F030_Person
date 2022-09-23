@@ -1,0 +1,6 @@
+--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE
+-I.\RTE\_Target_1
+-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device
+-ID:\Keil_v5\ARM\CMSIS\Include
+-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER
+-o .\objects\proc.o --omf_browse .\objects\proc.crf --depend .\objects\proc.d "..\HARDWARE\Proc.c"

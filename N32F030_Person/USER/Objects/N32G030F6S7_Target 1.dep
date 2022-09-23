@@ -1,0 +1,216 @@
+Dependencies for Project 'N32G030F6S7', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (..\CMSIS\device\system_n32g030.c)(0x612F3637)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\system_n32g030.o --omf_browse .\objects\system_n32g030.crf --depend .\objects\system_n32g030.d)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+F (..\CMSIS\device\HSI_Trim_Initail.lib)(0x612F1AAA)()
+F (..\CMSIS\device\startup\startup_n32g030.s)(0x6295E895)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 529" --pd "N32G030 SETA 1" --pd "USE_STDPERIPH_DRIVER SETA 1"--list .\listings\startup_n32g030.lst --xref -o .\objects\startup_n32g030.o --depend .\objects\startup_n32g030.d)
+F (.\main.c)(0x632D4CE9)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+I (main.h)(0x62C634CC)
+F (.\n32g030_it.c)(0x62D0FBE9)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\n32g030_it.o --omf_browse .\objects\n32g030_it.crf --depend .\objects\n32g030_it.d)
+I (n32g030_it.h)(0x6247EBCA)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (main.h)(0x62C634CC)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\delay.c)(0x630C2117)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+F (..\HARDWARE\LED.c)(0x62FF204D)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\modbus_slave.c)(0x632D58AA)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\modbus_slave.o --omf_browse .\objects\modbus_slave.crf --depend .\objects\modbus_slave.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\SHT20.c)(0x62FF2649)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\sht20.o --omf_browse .\objects\sht20.crf --depend .\objects\sht20.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\init.c)(0x632D58AA)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\flash.c)(0x62906394)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\flash.o --omf_browse .\objects\flash.crf --depend .\objects\flash.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\Proc.c)(0x630C1D45)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\proc.o --omf_browse .\objects\proc.crf --depend .\objects\proc.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+F (..\HARDWARE\oled.c)(0x62F7596E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE-I.\RTE\_Target_1-ID:\KEIL\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
+I (..\HARDWARE\include.h)(0x62D8AD3D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AD218)
+I (..\HARDWARE\delay.h)(0x628F027E)
+I (..\CMSIS\device\n32g030.h)(0x628F1CF1)
+I (..\CMSIS\core\core_cm0.h)(0x6247EB0D)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (..\CMSIS\core\core_cmInstr.h)(0x6247EB10)
+I (..\CMSIS\core\core_cmFunc.h)(0x6247EB0E)
+I (..\CMSIS\device\system_n32g030.h)(0x612F2578)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
+I (..\CMSIS\device\n32g030_conf.h)(0x62906278)
+I (..\HARDWARE\modbus_slave.h)(0x62FF2274)
+I (..\HARDWARE\sht20.h)(0x62D66FBB)
+I (..\HARDWARE\led.h)(0x62FF2047)
+I (..\HARDWARE\init.h)(0x6306DCFB)
+I (..\HARDWARE\Proc.h)(0x62D670A5)
+I (..\HARDWARE\flash.h)(0x62902EAE)
+I (..\HARDWARE\oled.h)(0x62F71A19)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
+I (..\HARDWARE\oledfont.h)(0x62F74164)

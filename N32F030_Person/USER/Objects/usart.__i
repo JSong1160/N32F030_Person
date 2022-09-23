@@ -1,0 +1,6 @@
+--c99 --gnu -c --cpu Cortex-M0 -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\device -I ..\CMSIS\device\startup -I ..\FWLIB\inc -I ..\USER -I ..\CMSIS\core -I ..\HARDWARE
+-I.\RTE\_Target_1
+-IC:\Users\14350\AppData\Local\Arm\Packs\Nationstech\N32G030_DFP\1.0.2\firmware\CMSIS\device
+-IC:\Keil_v5\ARM\CMSIS\Include
+-D__UVISION_VERSION="528" -DN32G030 -DUSE_STDPERIPH_DRIVER -DN32G030 -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT
+-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d "..\HARDWARE\usart.c"

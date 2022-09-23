@@ -1,0 +1,1034 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    system_n32g030.o(i.SetSysClock) refers to bsp_hsi.o(.text) for HSI_Trim_Init
+    system_n32g030.o(i.SystemCoreClockUpdate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    system_n32g030.o(i.SystemCoreClockUpdate) refers to system_n32g030.o(.data) for SystemCoreClock
+    system_n32g030.o(i.SystemCoreClockUpdate) refers to system_n32g030.o(.constdata) for AHBPrescTable
+    system_n32g030.o(i.SystemInit) refers to system_n32g030.o(i.SetSysClock) for SetSysClock
+    startup_n32g030.o(RESET) refers to startup_n32g030.o(STACK) for __initial_sp
+    startup_n32g030.o(RESET) refers to startup_n32g030.o(.text) for Reset_Handler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.NMI_Handler) for NMI_Handler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.HardFault_Handler) for HardFault_Handler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.SVC_Handler) for SVC_Handler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.PendSV_Handler) for PendSV_Handler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.SysTick_Handler) for SysTick_Handler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.EXTI0_1_IRQHandler) for EXTI0_1_IRQHandler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.TIM3_IRQHandler) for TIM3_IRQHandler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.LPTIM_TIM6_IRQHandler) for LPTIM_TIM6_IRQHandler
+    startup_n32g030.o(RESET) refers to n32g030_it.o(i.USART1_IRQHandler) for USART1_IRQHandler
+    startup_n32g030.o(.text) refers to system_n32g030.o(i.SystemInit) for SystemInit
+    startup_n32g030.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(i.main) refers to init.o(i.InitALL) for InitALL
+    main.o(i.main) refers to modbus_slave.o(i.MODS_Poll) for MODS_Poll
+    n32g030_it.o(i.EXTI0_1_IRQHandler) refers to n32g030_it.o(i.closeexit) for closeexit
+    n32g030_it.o(i.EXTI0_1_IRQHandler) refers to n32g030_it.o(.data) for recbittick
+    n32g030_it.o(i.EXTI0_1_IRQHandler) refers to n32g030_it.o(.bss) for recbit
+    n32g030_it.o(i.LPTIM_TIM6_IRQHandler) refers to n32g030_it.o(i.openexit) for openexit
+    n32g030_it.o(i.LPTIM_TIM6_IRQHandler) refers to n32g030_it.o(i.USART1r) for USART1r
+    n32g030_it.o(i.LPTIM_TIM6_IRQHandler) refers to n32g030_it.o(.data) for recbittick
+    n32g030_it.o(i.LPTIM_TIM6_IRQHandler) refers to n32g030_it.o(.bss) for recbit
+    n32g030_it.o(i.TIM3_IRQHandler) refers to n32g030_it.o(.data) for tim_flag
+    n32g030_it.o(i.TIM3_IRQHandler) refers to modbus_slave.o(.data) for g_mods_timeout
+    n32g030_it.o(i.USART1_IRQHandler) refers to modbus_slave.o(i.MODS_ReciveNew) for MODS_ReciveNew
+    n32g030_it.o(i.USART1r) refers to n32g030_it.o(.bss) for tempdata
+    n32g030_it.o(i.USART1r) refers to sht20.o(.data) for CO2
+    n32g030_it.o(i.USART1r) refers to n32g030_it.o(.data) for tickco2
+    n32g030_it.o(i.USART1r) refers to proc.o(.data) for cof_DACmax
+    delay.o(i.SysTick_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    delay.o(i.SysTick_Init) refers to delay.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    delay.o(i.SysTick_Init) refers to system_n32g030.o(.data) for SystemCoreClock
+    delay.o(i.delay_init) refers to delay.o(.data) for fac_us
+    delay.o(i.delay_ms) refers to delay.o(.data) for fac_ms
+    delay.o(i.delay_us) refers to delay.o(.data) for fac_us
+    led.o(i.SetLed) refers to sht20.o(.data) for cof_showstyle
+    modbus_slave.o(i.CRC16_Modbus) refers to modbus_slave.o(.constdata) for s_CRCHi
+    modbus_slave.o(i.MODS_03H) refers to modbus_slave.o(i.BEBufToUint16) for BEBufToUint16
+    modbus_slave.o(i.MODS_03H) refers to modbus_slave.o(i.MODS_ReadRegValue) for MODS_ReadRegValue
+    modbus_slave.o(i.MODS_03H) refers to modbus_slave.o(i.MODS_SendWithCRC) for MODS_SendWithCRC
+    modbus_slave.o(i.MODS_03H) refers to modbus_slave.o(i.MODS_SendAckErr) for MODS_SendAckErr
+    modbus_slave.o(i.MODS_03H) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_06H) refers to modbus_slave.o(i.BEBufToUint16) for BEBufToUint16
+    modbus_slave.o(i.MODS_06H) refers to modbus_slave.o(i.MODS_WriteRegValue) for MODS_WriteRegValue
+    modbus_slave.o(i.MODS_06H) refers to modbus_slave.o(i.MODS_SendAckOk) for MODS_SendAckOk
+    modbus_slave.o(i.MODS_06H) refers to modbus_slave.o(i.MODS_SendAckErr) for MODS_SendAckErr
+    modbus_slave.o(i.MODS_06H) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_AnalyzeApp) refers to modbus_slave.o(i.MODS_03H) for MODS_03H
+    modbus_slave.o(i.MODS_AnalyzeApp) refers to modbus_slave.o(i.MODS_06H) for MODS_06H
+    modbus_slave.o(i.MODS_AnalyzeApp) refers to modbus_slave.o(i.MODS_SendAckErr) for MODS_SendAckErr
+    modbus_slave.o(i.MODS_AnalyzeApp) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_Poll) refers to modbus_slave.o(i.CRC16_Modbus) for CRC16_Modbus
+    modbus_slave.o(i.MODS_Poll) refers to modbus_slave.o(i.MODS_AnalyzeApp) for MODS_AnalyzeApp
+    modbus_slave.o(i.MODS_Poll) refers to modbus_slave.o(.data) for g_mods_timeout
+    modbus_slave.o(i.MODS_Poll) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_Poll) refers to sht20.o(.data) for ModelID
+    modbus_slave.o(i.MODS_ReadRegValue) refers to modbus_slave.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    modbus_slave.o(i.MODS_ReadRegValue) refers to sht20.o(.data) for ModelID
+    modbus_slave.o(i.MODS_ReadRegValue) refers to proc.o(.data) for act_send
+    modbus_slave.o(i.MODS_ReadRegValue) refers to proc.o(.bss) for cpuID
+    modbus_slave.o(i.MODS_ReciveNew) refers to idiv.o(.text) for __aeabi_idivmod
+    modbus_slave.o(i.MODS_ReciveNew) refers to init.o(i.TIM3_Conf) for TIM3_Conf
+    modbus_slave.o(i.MODS_ReciveNew) refers to modbus_slave.o(.data) for g_mods_timeout
+    modbus_slave.o(i.MODS_ReciveNew) refers to sht20.o(.data) for ModelBaud
+    modbus_slave.o(i.MODS_ReciveNew) refers to n32g030_it.o(.data) for tim_flag
+    modbus_slave.o(i.MODS_ReciveNew) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_RxTimeOut) refers to modbus_slave.o(.data) for g_mods_timeout
+    modbus_slave.o(i.MODS_SendAckErr) refers to delay.o(i.delay_ms) for delay_ms
+    modbus_slave.o(i.MODS_SendAckErr) refers to modbus_slave.o(i.MODS_SendWithCRC) for MODS_SendWithCRC
+    modbus_slave.o(i.MODS_SendAckErr) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_SendAckOk) refers to modbus_slave.o(i.MODS_SendWithCRC) for MODS_SendWithCRC
+    modbus_slave.o(i.MODS_SendAckOk) refers to modbus_slave.o(.bss) for g_tModS
+    modbus_slave.o(i.MODS_SendWithCRC) refers to memcpya.o(.text) for __aeabi_memcpy
+    modbus_slave.o(i.MODS_SendWithCRC) refers to modbus_slave.o(i.CRC16_Modbus) for CRC16_Modbus
+    modbus_slave.o(i.MODS_SendWithCRC) refers to delay.o(i.delay_ms) for delay_ms
+    modbus_slave.o(i.MODS_SendWithCRC) refers to proc.o(i.RS485_SendBuf) for RS485_SendBuf
+    modbus_slave.o(i.MODS_SendWithCRC) refers to modbus_slave.o(.bss) for g_tPrint
+    modbus_slave.o(i.MODS_WriteRegValue) refers to proc.o(i.WriteInf) for WriteInf
+    modbus_slave.o(i.MODS_WriteRegValue) refers to sht20.o(.data) for ModelID
+    sht20.o(i.I2C3_Ack) refers to sht20.o(i.sda_out) for sda_out
+    sht20.o(i.I2C3_Ack) refers to sht20.o(i.sda3_l) for sda3_l
+    sht20.o(i.I2C3_Ack) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_Ack) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_Ack) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_Ack) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_Check) refers to sht20.o(i.sda_in) for sda_in
+    sht20.o(i.I2C3_Check) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_Check) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_Check) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_Check) refers to sht20.o(i.sda_out) for sda_out
+    sht20.o(i.I2C3_NoAck) refers to sht20.o(i.sda_out) for sda_out
+    sht20.o(i.I2C3_NoAck) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_NoAck) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_NoAck) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_NoAck) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_ReceiveByte) refers to sht20.o(i.sda_in) for sda_in
+    sht20.o(i.I2C3_ReceiveByte) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_ReceiveByte) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_ReceiveByte) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_ReceiveByte) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_SendByte) refers to sht20.o(i.sda_out) for sda_out
+    sht20.o(i.I2C3_SendByte) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_SendByte) refers to sht20.o(i.sda3_l) for sda3_l
+    sht20.o(i.I2C3_SendByte) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_SendByte) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_SendByte) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_Start) refers to sht20.o(i.sda_out) for sda_out
+    sht20.o(i.I2C3_Start) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_Start) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_Start) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_Start) refers to sht20.o(i.sda3_l) for sda3_l
+    sht20.o(i.I2C3_Start) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_Stop) refers to sht20.o(i.sda_out) for sda_out
+    sht20.o(i.I2C3_Stop) refers to sht20.o(i.sda3_l) for sda3_l
+    sht20.o(i.I2C3_Stop) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_Stop) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2C3_Stop) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_WaitAck) refers to sht20.o(i.sda_in) for sda_in
+    sht20.o(i.I2C3_WaitAck) refers to sht20.o(i.scl3_l) for scl3_l
+    sht20.o(i.I2C3_WaitAck) refers to delay.o(i.delay_us) for delay_us
+    sht20.o(i.I2C3_WaitAck) refers to sht20.o(i.sda3_h) for sda3_h
+    sht20.o(i.I2C3_WaitAck) refers to sht20.o(i.scl3_h) for scl3_h
+    sht20.o(i.I2cI2cI2cSoftReset) refers to sht20.o(i.I2C3_Start) for I2C3_Start
+    sht20.o(i.I2cI2cI2cSoftReset) refers to sht20.o(i.I2C3_SendByte) for I2C3_SendByte
+    sht20.o(i.I2cI2cI2cSoftReset) refers to sht20.o(i.I2C3_WaitAck) for I2C3_WaitAck
+    sht20.o(i.I2cI2cI2cSoftReset) refers to sht20.o(i.I2C3_Stop) for I2C3_Stop
+    sht20.o(i.LMP_Init) refers to sht20.o(i.i2c_wirtebyte) for i2c_wirtebyte
+    sht20.o(i.LMP_Init) refers to sht20.o(.data) for cof_jixing
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_Start) for I2C3_Start
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_SendByte) for I2C3_SendByte
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_WaitAck) for I2C3_WaitAck
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_ReceiveByte) for I2C3_ReceiveByte
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_NoAck) for I2C3_NoAck
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_Ack) for I2C3_Ack
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.I2C3_Stop) for I2C3_Stop
+    sht20.o(i.Multiple_read_BH1750) refers to delay.o(i.delay_ms) for delay_ms
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.Set6WLux) for Set6WLux
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(i.Set20Wlux) for Set20Wlux
+    sht20.o(i.Multiple_read_BH1750) refers to uidiv.o(.text) for __aeabi_uidivmod
+    sht20.o(i.Multiple_read_BH1750) refers to sht20.o(.data) for BUF
+    sht20.o(i.ReadSht20) refers to sht20.o(i.SET_Resolution) for SET_Resolution
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_Start) for I2C3_Start
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_SendByte) for I2C3_SendByte
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_WaitAck) for I2C3_WaitAck
+    sht20.o(i.ReadSht20) refers to delay.o(i.delay_ms) for delay_ms
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_ReceiveByte) for I2C3_ReceiveByte
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_Ack) for I2C3_Ack
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_NoAck) for I2C3_NoAck
+    sht20.o(i.ReadSht20) refers to sht20.o(i.I2C3_Stop) for I2C3_Stop
+    sht20.o(i.ReadSht20) refers to idiv.o(.text) for __aeabi_idivmod
+    sht20.o(i.SET_Resolution) refers to sht20.o(i.I2C3_Start) for I2C3_Start
+    sht20.o(i.SET_Resolution) refers to sht20.o(i.I2C3_SendByte) for I2C3_SendByte
+    sht20.o(i.SET_Resolution) refers to sht20.o(i.I2C3_WaitAck) for I2C3_WaitAck
+    sht20.o(i.SET_Resolution) refers to sht20.o(i.I2C3_Stop) for I2C3_Stop
+    sht20.o(i.Set20Wlux) refers to sht20.o(i.Single_Write_BH1750) for Single_Write_BH1750
+    sht20.o(i.Set20Wlux) refers to sht20.o(.data) for hilux
+    sht20.o(i.Set6WLux) refers to sht20.o(i.Single_Write_BH1750) for Single_Write_BH1750
+    sht20.o(i.Set6WLux) refers to sht20.o(.data) for hilux
+    sht20.o(i.Single_Write_BH1750) refers to sht20.o(i.I2C3_Start) for I2C3_Start
+    sht20.o(i.Single_Write_BH1750) refers to sht20.o(i.I2C3_SendByte) for I2C3_SendByte
+    sht20.o(i.Single_Write_BH1750) refers to sht20.o(i.I2C3_WaitAck) for I2C3_WaitAck
+    sht20.o(i.Single_Write_BH1750) refers to sht20.o(i.I2C3_Stop) for I2C3_Stop
+    sht20.o(i.i2c_wirtebyte) refers to sht20.o(i.I2C3_Start) for I2C3_Start
+    sht20.o(i.i2c_wirtebyte) refers to sht20.o(i.I2C3_SendByte) for I2C3_SendByte
+    sht20.o(i.i2c_wirtebyte) refers to sht20.o(i.I2C3_WaitAck) for I2C3_WaitAck
+    sht20.o(i.i2c_wirtebyte) refers to sht20.o(i.I2C3_Stop) for I2C3_Stop
+    init.o(i.DMA_Config) refers to init.o(.bss) for RegularConvData_Tab
+    init.o(i.InitALL) refers to system_n32g030.o(i.SystemInit) for SystemInit
+    init.o(i.InitALL) refers to delay.o(i.delay_init) for delay_init
+    init.o(i.InitALL) refers to init.o(i.GPIOInit) for GPIOInit
+    init.o(i.InitALL) refers to init.o(i.USART1_Config) for USART1_Config
+    init.o(i.InitALL) refers to proc.o(i.ReadInf) for ReadInf
+    init.o(i.InitALL) refers to delay.o(i.delay_ms) for delay_ms
+    init.o(i.InitALL) refers to proc.o(i.GetVolt) for GetVolt
+    init.o(i.InitALL) refers to proc.o(i.FlashCheck) for FlashCheck
+    init.o(i.InitALL) refers to proc.o(i.GetLockCode) for GetLockCode
+    init.o(i.TIM1_Conf) refers to init.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    init.o(i.TIM1_Conf) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.TIM1_PWM_Init) refers to init.o(i.TIM1_SetAutoreload) for TIM1_SetAutoreload
+    init.o(i.TIM3_Conf) refers to init.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    init.o(i.TIM3_Conf) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.TIM3_PWM_Init) refers to init.o(i.TIM3_SetAutoreload) for TIM3_SetAutoreload
+    init.o(i.TIM6_Conf) refers to init.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    init.o(i.TIM6_Conf) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.TIM8_Conf) refers to init.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    init.o(i.TIM8_Conf) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.USART1_Config) refers to ffltui.o(.text) for __aeabi_ui2f
+    init.o(i.USART1_Config) refers to fdiv.o(.text) for __aeabi_fdiv
+    init.o(i.USART1_Config) refers to ffixui.o(.text) for __aeabi_f2uiz
+    init.o(i.USART1_Config) refers to fadd.o(.text) for __aeabi_frsub
+    init.o(i.USART1_Config) refers to fmul.o(.text) for __aeabi_fmul
+    init.o(i.USART1_Config) refers to init.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    init.o(i.USART1_Config) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.USART1_Config) refers to sht20.o(.data) for ModelBaud
+    flash.o(i.FLASH_ConfigALLOptionByte) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_ConfigALLOptionByte) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_ConfigALLOptionByte) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_ConfigUserOB) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_ConfigUserOB) refers to flash.o(i.FLASH_GetReadOutProtectionSTS) for FLASH_GetReadOutProtectionSTS
+    flash.o(i.FLASH_ConfigUserOB) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_ConfigUserOB) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_EnWriteProtection) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_EnWriteProtection) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_EnWriteProtection) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_EraseOB) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_EraseOB) refers to flash.o(i.FLASH_GetReadOutProtectionSTS) for FLASH_GetReadOutProtectionSTS
+    flash.o(i.FLASH_EraseOB) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_EraseOB) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_EraseOnePage) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_EraseOnePage) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_MassErase) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_MassErase) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_ProgramOBData) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_ProgramOBData) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_ProgramOBData) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_ProgramWord) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_ProgramWord) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_ReadOutProtectionL1) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_ReadOutProtectionL1) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_ReadOutProtectionL1) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to flash.o(i.FLASH_GetReadOutProtectionSTS) for FLASH_GetReadOutProtectionSTS
+    flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    flash.o(i.FLASH_WaitForLastOpt) refers to flash.o(i.FLASH_GetSTS) for FLASH_GetSTS
+    proc.o(i.Alarm) refers to proc.o(.data) for Shangxian
+    proc.o(i.Alarm) refers to sht20.o(.data) for cof_showstyle
+    proc.o(i.DAC7512) refers to uidiv.o(.text) for __aeabi_uidivmod
+    proc.o(i.DAC7512) refers to proc.o(i.SetSDAPP) for SetSDAPP
+    proc.o(i.DAC7512) refers to proc.o(i.SetSDAOD) for SetSDAOD
+    proc.o(i.DAC7512) refers to proc.o(.data) for NH3
+    proc.o(i.FlashCheck) refers to proc.o(.data) for Flash_Check
+    proc.o(i.GetLockCode) refers to proc.o(.bss) for cpuID
+    proc.o(i.GetVolt) refers to uidiv.o(.text) for __aeabi_uidivmod
+    proc.o(i.GetVolt) refers to proc.o(i.WriteInf) for WriteInf
+    proc.o(i.GetVolt) refers to init.o(.bss) for RegularConvData_Tab
+    proc.o(i.GetVolt) refers to proc.o(.data) for votick
+    proc.o(i.GetVolt) refers to init.o(.data) for NH3offseton
+    proc.o(i.GetVolt) refers to sht20.o(.data) for cof_yuretime
+    proc.o(i.ReadInf) refers to proc.o(i.ResetInf) for ResetInf
+    proc.o(i.ReadInf) refers to flash.o(i.FLASH_Lock) for FLASH_Lock
+    proc.o(i.ReadInf) refers to proc.o(.data) for Address
+    proc.o(i.ReadInf) refers to sht20.o(.data) for cof_jixing
+    proc.o(i.ResetInf) refers to flash.o(i.FLASH_Unlock) for FLASH_Unlock
+    proc.o(i.ResetInf) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    proc.o(i.ResetInf) refers to flash.o(i.FLASH_EraseOnePage) for FLASH_EraseOnePage
+    proc.o(i.ResetInf) refers to flash.o(i.FLASH_ProgramWord) for FLASH_ProgramWord
+    proc.o(i.ResetInf) refers to proc.o(.data) for Address
+    proc.o(i.WriteInf) refers to flash.o(i.FLASH_Unlock) for FLASH_Unlock
+    proc.o(i.WriteInf) refers to flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    proc.o(i.WriteInf) refers to flash.o(i.FLASH_EraseOnePage) for FLASH_EraseOnePage
+    proc.o(i.WriteInf) refers to flash.o(i.FLASH_ProgramWord) for FLASH_ProgramWord
+    proc.o(i.WriteInf) refers to flash.o(i.FLASH_Lock) for FLASH_Lock
+    proc.o(i.WriteInf) refers to sht20.o(.data) for ModelID
+    proc.o(i.WriteInf) refers to proc.o(.data) for NH3offset
+    oled.o(i.OLED_Clear) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_Display_Off) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_Display_On) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_DrawBMP) refers to oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    oled.o(i.OLED_DrawBMP) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_Init) refers to delay.o(i.delay_ms) for delay_ms
+    oled.o(i.OLED_Init) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_Init) refers to oled.o(i.OLED_Clear) for OLED_Clear
+    oled.o(i.OLED_On) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_Set_Pos) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_ShowChar) refers to oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    oled.o(i.OLED_ShowChar) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_ShowChar) refers to oled.o(.constdata) for F8X16
+    oled.o(i.OLED_ShowCharNULL) refers to oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    oled.o(i.OLED_ShowCharNULL) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_ShowCharNULL) refers to oled.o(.constdata) for F18X16
+    oled.o(i.OLED_ShowCharh) refers to oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    oled.o(i.OLED_ShowCharh) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    oled.o(i.OLED_ShowCharh) refers to oled.o(.constdata) for F18X16
+    oled.o(i.OLED_ShowNum) refers to oled.o(i.oled_pow) for oled_pow
+    oled.o(i.OLED_ShowNum) refers to uidiv.o(.text) for __aeabi_uidivmod
+    oled.o(i.OLED_ShowNum) refers to oled.o(i.OLED_ShowChar) for OLED_ShowChar
+    oled.o(i.OLED_ShowString) refers to oled.o(i.OLED_ShowChar) for OLED_ShowChar
+    oled.o(i.OLED_WR_Byte) refers to oled.o(i.Write_IIC_Data) for Write_IIC_Data
+    oled.o(i.OLED_WR_Byte) refers to oled.o(i.Write_IIC_Command) for Write_IIC_Command
+    oled.o(i.ShowLED) refers to oled.o(i.OLED_Clear) for OLED_Clear
+    oled.o(i.ShowLED) refers to idiv.o(.text) for __aeabi_idivmod
+    oled.o(i.ShowLED) refers to oled.o(i.OLED_ShowCharh) for OLED_ShowCharh
+    oled.o(i.ShowLED) refers to oled.o(i.OLED_ShowString) for OLED_ShowString
+    oled.o(i.ShowLED) refers to oled.o(i.OLED_ShowCharNULL) for OLED_ShowCharNULL
+    oled.o(i.ShowLED) refers to oled.o(.data) for lstledst
+    oled.o(i.ShowLED) refers to proc.o(.data) for NH3
+    oled.o(i.Write_IIC_Command) refers to oled.o(i.IIC_Start) for IIC_Start
+    oled.o(i.Write_IIC_Command) refers to oled.o(i.Write_IIC_Byte) for Write_IIC_Byte
+    oled.o(i.Write_IIC_Command) refers to oled.o(i.IIC_Wait_Ack) for IIC_Wait_Ack
+    oled.o(i.Write_IIC_Command) refers to oled.o(i.IIC_Stop) for IIC_Stop
+    oled.o(i.Write_IIC_Data) refers to oled.o(i.IIC_Start) for IIC_Start
+    oled.o(i.Write_IIC_Data) refers to oled.o(i.Write_IIC_Byte) for Write_IIC_Byte
+    oled.o(i.Write_IIC_Data) refers to oled.o(i.IIC_Wait_Ack) for IIC_Wait_Ack
+    oled.o(i.Write_IIC_Data) refers to oled.o(i.IIC_Stop) for IIC_Stop
+    oled.o(i.fill_picture) refers to oled.o(i.OLED_WR_Byte) for OLED_WR_Byte
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_n32g030.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_n32g030.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing system_n32g030.o(.emb_text), (8 bytes).
+    Removing system_n32g030.o(i.SystemCoreClockUpdate), (256 bytes).
+    Removing system_n32g030.o(.constdata), (16 bytes).
+    Removing system_n32g030.o(.data), (4 bytes).
+    Removing startup_n32g030.o(HEAP), (512 bytes).
+    Removing main.o(.emb_text), (8 bytes).
+    Removing n32g030_it.o(.emb_text), (8 bytes).
+    Removing delay.o(.emb_text), (8 bytes).
+    Removing delay.o(i.Delay), (18 bytes).
+    Removing delay.o(i.NVIC_SetPriority), (120 bytes).
+    Removing delay.o(i.SysTick_Init), (76 bytes).
+    Removing delay.o(i.delay_us), (80 bytes).
+    Removing led.o(.emb_text), (8 bytes).
+    Removing led.o(i.LED_Init), (76 bytes).
+    Removing led.o(i.SetLed), (64 bytes).
+    Removing modbus_slave.o(.emb_text), (8 bytes).
+    Removing modbus_slave.o(i.MODS_RxTimeOut), (12 bytes).
+    Removing sht20.o(.emb_text), (8 bytes).
+    Removing sht20.o(i.I2C3_Ack), (48 bytes).
+    Removing sht20.o(i.I2C3_Check), (72 bytes).
+    Removing sht20.o(i.I2C3_NoAck), (38 bytes).
+    Removing sht20.o(i.I2C3_ReceiveByte), (80 bytes).
+    Removing sht20.o(i.I2C3_SendByte), (72 bytes).
+    Removing sht20.o(i.I2C3_Start), (84 bytes).
+    Removing sht20.o(i.I2C3_Stop), (38 bytes).
+    Removing sht20.o(i.I2C3_WaitAck), (68 bytes).
+    Removing sht20.o(i.I2C3_delay), (114 bytes).
+    Removing sht20.o(i.I2cI2cI2cSoftReset), (32 bytes).
+    Removing sht20.o(i.LMP_Init), (68 bytes).
+    Removing sht20.o(i.Multiple_read_BH1750), (292 bytes).
+    Removing sht20.o(i.ReadSht20), (220 bytes).
+    Removing sht20.o(i.SET_Resolution), (50 bytes).
+    Removing sht20.o(i.Set20Wlux), (28 bytes).
+    Removing sht20.o(i.Set6WLux), (28 bytes).
+    Removing sht20.o(i.Single_Write_BH1750), (34 bytes).
+    Removing sht20.o(i.i2c_wirtebyte), (60 bytes).
+    Removing sht20.o(i.scl3_h), (20 bytes).
+    Removing sht20.o(i.scl3_l), (20 bytes).
+    Removing sht20.o(i.sda3_h), (20 bytes).
+    Removing sht20.o(i.sda3_l), (20 bytes).
+    Removing sht20.o(i.sda_in), (72 bytes).
+    Removing sht20.o(i.sda_out), (84 bytes).
+    Removing sht20.o(.bss), (14 bytes).
+    Removing init.o(.emb_text), (8 bytes).
+    Removing init.o(i.ADC_Config), (364 bytes).
+    Removing init.o(i.DMA_Config), (224 bytes).
+    Removing init.o(i.TIM1_Conf), (96 bytes).
+    Removing init.o(i.TIM1_PWM_Init), (500 bytes).
+    Removing init.o(i.TIM1_SetAutoreload), (12 bytes).
+    Removing init.o(i.TIM1_SetCompare1), (12 bytes).
+    Removing init.o(i.TIM3_PWM_Init), (456 bytes).
+    Removing init.o(i.TIM3_SetAutoreload), (12 bytes).
+    Removing init.o(i.TIM3_SetCompare), (12 bytes).
+    Removing init.o(i.TIM6_Conf), (76 bytes).
+    Removing init.o(i.TIM8_Conf), (136 bytes).
+    Removing init.o(i.TIM8_SetAutoreload), (12 bytes).
+    Removing init.o(i.TIM8_SetCompare), (12 bytes).
+    Removing init.o(i._sys_exit), (4 bytes).
+    Removing init.o(i.fputc), (28 bytes).
+    Removing flash.o(.emb_text), (8 bytes).
+    Removing flash.o(i.FLASH_ConfigALLOptionByte), (324 bytes).
+    Removing flash.o(i.FLASH_ConfigUserOB), (244 bytes).
+    Removing flash.o(i.FLASH_EnWriteProtection), (148 bytes).
+    Removing flash.o(i.FLASH_EraseOB), (208 bytes).
+    Removing flash.o(i.FLASH_GetFlagSTS), (48 bytes).
+    Removing flash.o(i.FLASH_GetPrefetchBufSTS), (28 bytes).
+    Removing flash.o(i.FLASH_GetReadOutProtectionL2STS), (28 bytes).
+    Removing flash.o(i.FLASH_GetReadOutProtectionSTS), (28 bytes).
+    Removing flash.o(i.FLASH_GetUserOB), (16 bytes).
+    Removing flash.o(i.FLASH_GetWriteProtectionOB), (12 bytes).
+    Removing flash.o(i.FLASH_INTConfig), (32 bytes).
+    Removing flash.o(i.FLASH_MassErase), (84 bytes).
+    Removing flash.o(i.FLASH_PrefetchBufSet), (28 bytes).
+    Removing flash.o(i.FLASH_ProgramOBData), (112 bytes).
+    Removing flash.o(i.FLASH_ReadOutProtectionL1), (224 bytes).
+    Removing flash.o(i.FLASH_ReadOutProtectionL2_ENABLE), (244 bytes).
+    Removing flash.o(i.FLASH_SetLatency), (28 bytes).
+    Removing proc.o(.emb_text), (8 bytes).
+    Removing proc.o(i.Alarm), (304 bytes).
+    Removing proc.o(i.DAC7512), (352 bytes).
+    Removing proc.o(i.SetSDAOD), (88 bytes).
+    Removing proc.o(i.SetSDAPP), (112 bytes).
+    Removing oled.o(.emb_text), (8 bytes).
+    Removing oled.o(i.Delay_1ms), (26 bytes).
+    Removing oled.o(i.Delay_50ms), (24 bytes).
+    Removing oled.o(i.IIC_Start), (56 bytes).
+    Removing oled.o(i.IIC_Stop), (44 bytes).
+    Removing oled.o(i.IIC_Wait_Ack), (32 bytes).
+    Removing oled.o(i.OLED_Clear), (62 bytes).
+    Removing oled.o(i.OLED_Display_Off), (28 bytes).
+    Removing oled.o(i.OLED_Display_On), (28 bytes).
+    Removing oled.o(i.OLED_DrawBMP), (116 bytes).
+    Removing oled.o(i.OLED_Init), (232 bytes).
+    Removing oled.o(i.OLED_On), (62 bytes).
+    Removing oled.o(i.OLED_Set_Pos), (44 bytes).
+    Removing oled.o(i.OLED_ShowChar), (160 bytes).
+    Removing oled.o(i.OLED_ShowCharNULL), (208 bytes).
+    Removing oled.o(i.OLED_ShowCharh), (264 bytes).
+    Removing oled.o(i.OLED_ShowNum), (146 bytes).
+    Removing oled.o(i.OLED_ShowString), (52 bytes).
+    Removing oled.o(i.OLED_WR_Byte), (26 bytes).
+    Removing oled.o(i.ShowLED), (712 bytes).
+    Removing oled.o(i.Write_IIC_Byte), (100 bytes).
+    Removing oled.o(i.Write_IIC_Command), (44 bytes).
+    Removing oled.o(i.Write_IIC_Data), (44 bytes).
+    Removing oled.o(i.fill_picture), (64 bytes).
+    Removing oled.o(i.oled_pow), (26 bytes).
+    Removing oled.o(.constdata), (2977 bytes).
+    Removing oled.o(.data), (5 bytes).
+
+109 unused section(s) (total 13228 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ..\CMSIS\device\startup\startup_n32g030.s 0x00000000   Number         0  startup_n32g030.o ABSOLUTE
+    ..\CMSIS\device\system_n32g030.c         0x00000000   Number         0  system_n32g030.o ABSOLUTE
+    ..\HARDWARE\LED.c                        0x00000000   Number         0  led.o ABSOLUTE
+    ..\HARDWARE\Proc.c                       0x00000000   Number         0  proc.o ABSOLUTE
+    ..\HARDWARE\SHT20.c                      0x00000000   Number         0  sht20.o ABSOLUTE
+    ..\HARDWARE\delay.c                      0x00000000   Number         0  delay.o ABSOLUTE
+    ..\HARDWARE\flash.c                      0x00000000   Number         0  flash.o ABSOLUTE
+    ..\HARDWARE\init.c                       0x00000000   Number         0  init.o ABSOLUTE
+    ..\HARDWARE\modbus_slave.c               0x00000000   Number         0  modbus_slave.o ABSOLUTE
+    ..\HARDWARE\oled.c                       0x00000000   Number         0  oled.o ABSOLUTE
+    ..\\CMSIS\\device\\system_n32g030.c      0x00000000   Number         0  system_n32g030.o ABSOLUTE
+    ..\\HARDWARE\\LED.c                      0x00000000   Number         0  led.o ABSOLUTE
+    ..\\HARDWARE\\Proc.c                     0x00000000   Number         0  proc.o ABSOLUTE
+    ..\\HARDWARE\\SHT20.c                    0x00000000   Number         0  sht20.o ABSOLUTE
+    ..\\HARDWARE\\delay.c                    0x00000000   Number         0  delay.o ABSOLUTE
+    ..\\HARDWARE\\flash.c                    0x00000000   Number         0  flash.o ABSOLUTE
+    ..\\HARDWARE\\init.c                     0x00000000   Number         0  init.o ABSOLUTE
+    ..\\HARDWARE\\modbus_slave.c             0x00000000   Number         0  modbus_slave.o ABSOLUTE
+    ..\\HARDWARE\\oled.c                     0x00000000   Number         0  oled.o ABSOLUTE
+    ..\src\bsp_hsi.c                         0x00000000   Number         0  bsp_hsi.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    n32g030_it.c                             0x00000000   Number         0  n32g030_it.o ABSOLUTE
+    n32g030_it.c                             0x00000000   Number         0  n32g030_it.o ABSOLUTE
+    RESET                                    0x08000000   Section      192  startup_n32g030.o(RESET)
+    .ARM.Collect$$$$00000000                 0x080000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x080000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x080000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x080000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x080000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x080000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x080000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x080000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x080000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x080000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x080000d4   Section       28  startup_n32g030.o(.text)
+    .text                                    0x080000f0   Section        0  bsp_hsi.o(.text)
+    .text                                    0x08000158   Section        0  uidiv.o(.text)
+    .text                                    0x08000184   Section        0  idiv.o(.text)
+    .text                                    0x080001ac   Section        0  memcpya.o(.text)
+    .text                                    0x080001d0   Section        0  fadd.o(.text)
+    .text                                    0x08000282   Section        0  fmul.o(.text)
+    .text                                    0x080002fc   Section        0  fdiv.o(.text)
+    .text                                    0x08000378   Section        0  ffltui.o(.text)
+    .text                                    0x08000386   Section        0  ffixui.o(.text)
+    .text                                    0x080003ae   Section        0  iusefp.o(.text)
+    .text                                    0x080003ae   Section        0  fepilogue.o(.text)
+    .text                                    0x08000430   Section       36  init.o(.text)
+    i.BEBufToUint16                          0x08000454   Section        0  modbus_slave.o(i.BEBufToUint16)
+    i.CRC16_Modbus                           0x08000460   Section        0  modbus_slave.o(i.CRC16_Modbus)
+    i.EXTI0_1_IRQHandler                     0x08000498   Section        0  n32g030_it.o(i.EXTI0_1_IRQHandler)
+    i.FLASH_ClearFlag                        0x08000528   Section        0  flash.o(i.FLASH_ClearFlag)
+    i.FLASH_EraseOnePage                     0x08000538   Section        0  flash.o(i.FLASH_EraseOnePage)
+    i.FLASH_GetSTS                           0x08000590   Section        0  flash.o(i.FLASH_GetSTS)
+    i.FLASH_Lock                             0x080005cc   Section        0  flash.o(i.FLASH_Lock)
+    i.FLASH_ProgramWord                      0x080005e0   Section        0  flash.o(i.FLASH_ProgramWord)
+    i.FLASH_Unlock                           0x08000630   Section        0  flash.o(i.FLASH_Unlock)
+    i.FLASH_WaitForLastOpt                   0x08000654   Section        0  flash.o(i.FLASH_WaitForLastOpt)
+    i.FlashCheck                             0x0800067c   Section        0  proc.o(i.FlashCheck)
+    i.GPIOInit                               0x08000710   Section        0  init.o(i.GPIOInit)
+    i.GetLockCode                            0x08000788   Section        0  proc.o(i.GetLockCode)
+    i.GetVolt                                0x080007cc   Section        0  proc.o(i.GetVolt)
+    i.HardFault_Handler                      0x080009f0   Section        0  n32g030_it.o(i.HardFault_Handler)
+    i.InitALL                                0x080009f4   Section        0  init.o(i.InitALL)
+    i.LPTIM_TIM6_IRQHandler                  0x08000a24   Section        0  n32g030_it.o(i.LPTIM_TIM6_IRQHandler)
+    i.MODS_03H                               0x08000b64   Section        0  modbus_slave.o(i.MODS_03H)
+    MODS_03H                                 0x08000b65   Thumb Code   288  modbus_slave.o(i.MODS_03H)
+    i.MODS_06H                               0x08000c88   Section        0  modbus_slave.o(i.MODS_06H)
+    MODS_06H                                 0x08000c89   Thumb Code    88  modbus_slave.o(i.MODS_06H)
+    i.MODS_AnalyzeApp                        0x08000ce4   Section        0  modbus_slave.o(i.MODS_AnalyzeApp)
+    MODS_AnalyzeApp                          0x08000ce5   Thumb Code    50  modbus_slave.o(i.MODS_AnalyzeApp)
+    i.MODS_Poll                              0x08000d1c   Section        0  modbus_slave.o(i.MODS_Poll)
+    i.MODS_ReadRegValue                      0x08000d78   Section        0  modbus_slave.o(i.MODS_ReadRegValue)
+    MODS_ReadRegValue                        0x08000d79   Thumb Code   158  modbus_slave.o(i.MODS_ReadRegValue)
+    i.MODS_ReciveNew                         0x08000e38   Section        0  modbus_slave.o(i.MODS_ReciveNew)
+    i.MODS_SendAckErr                        0x08000e98   Section        0  modbus_slave.o(i.MODS_SendAckErr)
+    MODS_SendAckErr                          0x08000e99   Thumb Code    42  modbus_slave.o(i.MODS_SendAckErr)
+    i.MODS_SendAckOk                         0x08000ec8   Section        0  modbus_slave.o(i.MODS_SendAckOk)
+    MODS_SendAckOk                           0x08000ec9   Thumb Code    32  modbus_slave.o(i.MODS_SendAckOk)
+    i.MODS_SendWithCRC                       0x08000eec   Section        0  modbus_slave.o(i.MODS_SendWithCRC)
+    MODS_SendWithCRC                         0x08000eed   Thumb Code    82  modbus_slave.o(i.MODS_SendWithCRC)
+    i.MODS_WriteRegValue                     0x08000f44   Section        0  modbus_slave.o(i.MODS_WriteRegValue)
+    MODS_WriteRegValue                       0x08000f45   Thumb Code    50  modbus_slave.o(i.MODS_WriteRegValue)
+    i.NMI_Handler                            0x08000f80   Section        0  n32g030_it.o(i.NMI_Handler)
+    i.NVIC_EnableIRQ                         0x08000f84   Section        0  init.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x08000f85   Thumb Code    14  init.o(i.NVIC_EnableIRQ)
+    i.NVIC_SetPriority                       0x08000f98   Section        0  init.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x08000f99   Thumb Code   110  init.o(i.NVIC_SetPriority)
+    i.PendSV_Handler                         0x08001010   Section        0  n32g030_it.o(i.PendSV_Handler)
+    i.RS485_SendBuf                          0x08001014   Section        0  proc.o(i.RS485_SendBuf)
+    i.ReadInf                                0x08001068   Section        0  proc.o(i.ReadInf)
+    i.ResetInf                               0x08001214   Section        0  proc.o(i.ResetInf)
+    i.SVC_Handler                            0x080012a0   Section        0  n32g030_it.o(i.SVC_Handler)
+    i.SetSysClock                            0x080012a4   Section        0  system_n32g030.o(i.SetSysClock)
+    SetSysClock                              0x080012a5   Thumb Code   222  system_n32g030.o(i.SetSysClock)
+    i.SysTick_Handler                        0x08001394   Section        0  n32g030_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08001398   Section        0  system_n32g030.o(i.SystemInit)
+    i.TIM3_Conf                              0x0800140c   Section        0  init.o(i.TIM3_Conf)
+    i.TIM3_IRQHandler                        0x08001478   Section        0  n32g030_it.o(i.TIM3_IRQHandler)
+    i.USART1_Config                          0x080014c4   Section        0  init.o(i.USART1_Config)
+    i.USART1_IRQHandler                      0x080016d8   Section        0  n32g030_it.o(i.USART1_IRQHandler)
+    i.USART1r                                0x080016f8   Section        0  n32g030_it.o(i.USART1r)
+    i.WriteInf                               0x080018ac   Section        0  proc.o(i.WriteInf)
+    i.__ARM_common_switch8                   0x08001aec   Section        0  modbus_slave.o(i.__ARM_common_switch8)
+    i.__scatterload_copy                     0x08001b08   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08001b16   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08001b18   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.closeexit                              0x08001b28   Section        0  n32g030_it.o(i.closeexit)
+    i.delay_init                             0x08001b7c   Section        0  delay.o(i.delay_init)
+    i.delay_ms                               0x08001bc0   Section        0  delay.o(i.delay_ms)
+    i.main                                   0x08001c10   Section        0  main.o(i.main)
+    i.openexit                               0x08001c1c   Section        0  n32g030_it.o(i.openexit)
+    .constdata                               0x08001c4c   Section      512  modbus_slave.o(.constdata)
+    s_CRCHi                                  0x08001c4c   Data         256  modbus_slave.o(.constdata)
+    .data                                    0x20000000   Section       22  n32g030_it.o(.data)
+    .data                                    0x20000016   Section        4  delay.o(.data)
+    fac_us                                   0x20000016   Data           1  delay.o(.data)
+    fac_ms                                   0x20000018   Data           2  delay.o(.data)
+    .data                                    0x2000001a   Section        1  modbus_slave.o(.data)
+    .data                                    0x2000001c   Section       75  sht20.o(.data)
+    .data                                    0x20000068   Section       12  init.o(.data)
+    .data                                    0x20000074   Section       93  proc.o(.data)
+    .bss                                     0x200000d4   Section       34  n32g030_it.o(.bss)
+    .bss                                     0x200000f6   Section      338  modbus_slave.o(.bss)
+    .bss                                     0x20000248   Section      340  init.o(.bss)
+    .bss                                     0x2000039c   Section       24  proc.o(.bss)
+    STACK                                    0x200003b8   Section     1024  startup_n32g030.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x000000c0   Number         0  startup_n32g030.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_n32g030.o(RESET)
+    __Vectors_End                            0x080000c0   Data           0  startup_n32g030.o(RESET)
+    __main                                   0x080000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x080000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x080000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x080000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x080000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x080000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x080000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x080000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x080000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x080000d5   Thumb Code     8  startup_n32g030.o(.text)
+    ADC_IRQHandler                           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    COMP_IRQHandler                          0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    DMA_Channel1_2_3_4_IRQHandler            0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    DMA_Channel1_2_IRQHandler                0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    DMA_Channel3_4_IRQHandler                0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    DMA_Channel5_IRQHandler                  0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    EXTI2_3_IRQHandler                       0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    EXTI4_15_IRQHandler                      0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    FLASH_IRQHandler                         0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    HDIV_SQRT_IRQHandler                     0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    I2C1_IRQHandler                          0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    I2C2_IRQHandler                          0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    LPUART_IRQHandler                        0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    MMU_IRQHandler                           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    PVD_IRQHandler                           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    RAMC_PERR_IRQHandler                     0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    RCC_IRQHandler                           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    RESERVE9_IRQHandler                      0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    RTC_IRQHandler                           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    SPI1_IRQHandler                          0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    SPI2_IRQHandler                          0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    TIM1_BRK_UP_TRG_COM_IRQHandler           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    TIM1_CC_IRQHandler                       0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    TIM8_BRK_UP_TRG_COM_IRQHandler           0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    TIM8_CC_IRQHandler                       0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    USART1_2_IRQHandler                      0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    USART2_IRQHandler                        0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    WWDG_IRQHandler                          0x080000e7   Thumb Code     0  startup_n32g030.o(.text)
+    HSI_Trim_Init                            0x080000f1   Thumb Code    88  bsp_hsi.o(.text)
+    __aeabi_uidiv                            0x08000159   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x08000159   Thumb Code    44  uidiv.o(.text)
+    __aeabi_idiv                             0x08000185   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x08000185   Thumb Code    40  idiv.o(.text)
+    __aeabi_memcpy                           0x080001ad   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x080001ad   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x080001ad   Thumb Code     0  memcpya.o(.text)
+    __aeabi_fadd                             0x080001d1   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x08000273   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x0800027b   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x08000283   Thumb Code   122  fmul.o(.text)
+    __aeabi_fdiv                             0x080002fd   Thumb Code   124  fdiv.o(.text)
+    __aeabi_ui2f                             0x08000379   Thumb Code    14  ffltui.o(.text)
+    __aeabi_f2uiz                            0x08000387   Thumb Code    40  ffixui.o(.text)
+    __I$use$fp                               0x080003af   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x080003af   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x080003bf   Thumb Code   114  fepilogue.o(.text)
+    __scatterload                            0x08000431   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08000431   Thumb Code     0  init.o(.text)
+    BEBufToUint16                            0x08000455   Thumb Code    12  modbus_slave.o(i.BEBufToUint16)
+    CRC16_Modbus                             0x08000461   Thumb Code    46  modbus_slave.o(i.CRC16_Modbus)
+    EXTI0_1_IRQHandler                       0x08000499   Thumb Code   118  n32g030_it.o(i.EXTI0_1_IRQHandler)
+    FLASH_ClearFlag                          0x08000529   Thumb Code    12  flash.o(i.FLASH_ClearFlag)
+    FLASH_EraseOnePage                       0x08000539   Thumb Code    78  flash.o(i.FLASH_EraseOnePage)
+    FLASH_GetSTS                             0x08000591   Thumb Code    54  flash.o(i.FLASH_GetSTS)
+    FLASH_Lock                               0x080005cd   Thumb Code    14  flash.o(i.FLASH_Lock)
+    FLASH_ProgramWord                        0x080005e1   Thumb Code    70  flash.o(i.FLASH_ProgramWord)
+    FLASH_Unlock                             0x08000631   Thumb Code    24  flash.o(i.FLASH_Unlock)
+    FLASH_WaitForLastOpt                     0x08000655   Thumb Code    40  flash.o(i.FLASH_WaitForLastOpt)
+    FlashCheck                               0x0800067d   Thumb Code   132  proc.o(i.FlashCheck)
+    GPIOInit                                 0x08000711   Thumb Code   110  init.o(i.GPIOInit)
+    GetLockCode                              0x08000789   Thumb Code    58  proc.o(i.GetLockCode)
+    GetVolt                                  0x080007cd   Thumb Code   466  proc.o(i.GetVolt)
+    HardFault_Handler                        0x080009f1   Thumb Code     4  n32g030_it.o(i.HardFault_Handler)
+    InitALL                                  0x080009f5   Thumb Code    46  init.o(i.InitALL)
+    LPTIM_TIM6_IRQHandler                    0x08000a25   Thumb Code   296  n32g030_it.o(i.LPTIM_TIM6_IRQHandler)
+    MODS_Poll                                0x08000d1d   Thumb Code    78  modbus_slave.o(i.MODS_Poll)
+    MODS_ReciveNew                           0x08000e39   Thumb Code    70  modbus_slave.o(i.MODS_ReciveNew)
+    NMI_Handler                              0x08000f81   Thumb Code     2  n32g030_it.o(i.NMI_Handler)
+    PendSV_Handler                           0x08001011   Thumb Code     2  n32g030_it.o(i.PendSV_Handler)
+    RS485_SendBuf                            0x08001015   Thumb Code    76  proc.o(i.RS485_SendBuf)
+    ReadInf                                  0x08001069   Thumb Code   330  proc.o(i.ReadInf)
+    ResetInf                                 0x08001215   Thumb Code   128  proc.o(i.ResetInf)
+    SVC_Handler                              0x080012a1   Thumb Code     2  n32g030_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x08001395   Thumb Code     2  n32g030_it.o(i.SysTick_Handler)
+    SystemInit                               0x08001399   Thumb Code    94  system_n32g030.o(i.SystemInit)
+    TIM3_Conf                                0x0800140d   Thumb Code   100  init.o(i.TIM3_Conf)
+    TIM3_IRQHandler                          0x08001479   Thumb Code    64  n32g030_it.o(i.TIM3_IRQHandler)
+    USART1_Config                            0x080014c5   Thumb Code   508  init.o(i.USART1_Config)
+    USART1_IRQHandler                        0x080016d9   Thumb Code    26  n32g030_it.o(i.USART1_IRQHandler)
+    USART1r                                  0x080016f9   Thumb Code   414  n32g030_it.o(i.USART1r)
+    WriteInf                                 0x080018ad   Thumb Code   484  proc.o(i.WriteInf)
+    __ARM_common_switch8                     0x08001aed   Thumb Code    28  modbus_slave.o(i.__ARM_common_switch8)
+    __scatterload_copy                       0x08001b09   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08001b17   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08001b19   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    closeexit                                0x08001b29   Thumb Code    74  n32g030_it.o(i.closeexit)
+    delay_init                               0x08001b7d   Thumb Code    50  delay.o(i.delay_init)
+    delay_ms                                 0x08001bc1   Thumb Code    70  delay.o(i.delay_ms)
+    main                                     0x08001c11   Thumb Code    12  main.o(i.main)
+    openexit                                 0x08001c1d   Thumb Code    38  n32g030_it.o(i.openexit)
+    s_CRCLo                                  0x08001d4c   Data         256  modbus_slave.o(.constdata)
+    Region$$Table$$Base                      0x08001e4c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001e6c   Number         0  anon$$obj.o(Region$$Table)
+    tim_flag                                 0x20000000   Data           1  n32g030_it.o(.data)
+    leda                                     0x20000001   Data           1  n32g030_it.o(.data)
+    CO2_tem                                  0x20000002   Data           2  n32g030_it.o(.data)
+    CO2_last                                 0x20000004   Data           2  n32g030_it.o(.data)
+    tickco2                                  0x20000006   Data           1  n32g030_it.o(.data)
+    n                                        0x20000007   Data           1  n32g030_it.o(.data)
+    CO2Off                                   0x20000008   Data           2  n32g030_it.o(.data)
+    ischange                                 0x2000000a   Data           2  n32g030_it.o(.data)
+    CO2F                                     0x2000000c   Data           2  n32g030_it.o(.data)
+    CO2Mult                                  0x2000000e   Data           2  n32g030_it.o(.data)
+    co2tick                                  0x20000010   Data           1  n32g030_it.o(.data)
+    fisrt                                    0x20000011   Data           1  n32g030_it.o(.data)
+    recbittick                               0x20000012   Data           1  n32g030_it.o(.data)
+    outtimetick                              0x20000013   Data           1  n32g030_it.o(.data)
+    recstyle                                 0x20000014   Data           1  n32g030_it.o(.data)
+    tim8_count                               0x20000015   Data           1  n32g030_it.o(.data)
+    g_mods_timeout                           0x2000001a   Data           1  modbus_slave.o(.data)
+    TemSelect                                0x2000001c   Data           1  sht20.o(.data)
+    cof_showstyle                            0x2000001d   Data           1  sht20.o(.data)
+    cof_showstyle_last                       0x2000001e   Data           1  sht20.o(.data)
+    hour                                     0x2000001f   Data           1  sht20.o(.data)
+    minutes                                  0x20000020   Data           1  sht20.o(.data)
+    seconds                                  0x20000021   Data           1  sht20.o(.data)
+    Tem                                      0x20000022   Data           2  sht20.o(.data)
+    Hum                                      0x20000024   Data           2  sht20.o(.data)
+    Tem_last                                 0x20000026   Data           2  sht20.o(.data)
+    Hum_last                                 0x20000028   Data           2  sht20.o(.data)
+    Tem_count                                0x2000002a   Data           2  sht20.o(.data)
+    Hum_count                                0x2000002c   Data           2  sht20.o(.data)
+    ModelBaud                                0x2000002e   Data           2  sht20.o(.data)
+    CO2                                      0x20000030   Data           2  sht20.o(.data)
+    tvoc                                     0x20000032   Data           2  sht20.o(.data)
+    LuxMult                                  0x20000034   Data           2  sht20.o(.data)
+    DQQY                                     0x20000038   Data           4  sht20.o(.data)
+    Lux                                      0x2000003c   Data           4  sht20.o(.data)
+    LuxOff                                   0x20000040   Data           2  sht20.o(.data)
+    biaozhiwei                               0x20000044   Data           4  sht20.o(.data)
+    Tem_K                                    0x20000048   Data           4  sht20.o(.data)
+    TemOff                                   0x2000004c   Data           4  sht20.o(.data)
+    HumOff                                   0x20000050   Data           4  sht20.o(.data)
+    Hum_K                                    0x20000054   Data           4  sht20.o(.data)
+    ModelID                                  0x20000058   Data           1  sht20.o(.data)
+    LuxSelect                                0x20000059   Data           1  sht20.o(.data)
+    cof_jixing                               0x2000005a   Data           1  sht20.o(.data)
+    cof_yuretime                             0x2000005c   Data           2  sht20.o(.data)
+    BUF                                      0x2000005e   Data           8  sht20.o(.data)
+    hilux                                    0x20000066   Data           1  sht20.o(.data)
+    yurenowtianme                            0x20000068   Data           2  init.o(.data)
+    NH3offseton                              0x2000006a   Data           2  init.o(.data)
+    CaliTime                                 0x2000006c   Data           4  init.o(.data)
+    CaliTime1                                0x20000070   Data           4  init.o(.data)
+    cof_NH3cheng                             0x20000074   Data           2  proc.o(.data)
+    cof_NH3chu                               0x20000076   Data           2  proc.o(.data)
+    DQSelect                                 0x20000078   Data           2  proc.o(.data)
+    DACSelect                                0x2000007a   Data           2  proc.o(.data)
+    cof_DACcheng                             0x2000007c   Data           2  proc.o(.data)
+    cof_DACchu                               0x2000007e   Data           2  proc.o(.data)
+    cof_5vcheng                              0x20000080   Data           2  proc.o(.data)
+    cof_5vchu                                0x20000082   Data           2  proc.o(.data)
+    DAC2_Style                               0x20000084   Data           2  proc.o(.data)
+    cof_yurevalue                            0x20000086   Data           2  proc.o(.data)
+    DACType                                  0x20000088   Data           2  proc.o(.data)
+    cof_DACb                                 0x2000008a   Data           2  proc.o(.data)
+    cof_DACmax                               0x2000008c   Data           4  proc.o(.data)
+    temp1                                    0x20000090   Data           4  proc.o(.data)
+    Shangxian                                0x20000094   Data           4  proc.o(.data)
+    Xiaxian                                  0x20000098   Data           4  proc.o(.data)
+    HuiLuo                                   0x2000009c   Data           4  proc.o(.data)
+    Flash_Check                              0x200000a0   Data           2  proc.o(.data)
+    EVENODD                                  0x200000a2   Data           1  proc.o(.data)
+    Volt1                                    0x200000a4   Data           2  proc.o(.data)
+    Volt2                                    0x200000a6   Data           2  proc.o(.data)
+    NH3                                      0x200000a8   Data           2  proc.o(.data)
+    NH3offset                                0x200000aa   Data           2  proc.o(.data)
+    M_Dac1                                   0x200000ac   Data           2  proc.o(.data)
+    M_Dac2                                   0x200000ae   Data           2  proc.o(.data)
+    act_send                                 0x200000b0   Data           2  proc.o(.data)
+    EraseCounter                             0x200000b4   Data           4  proc.o(.data)
+    Address                                  0x200000b8   Data           4  proc.o(.data)
+    Data                                     0x200000bc   Data           4  proc.o(.data)
+    NbrOfPage                                0x200000c0   Data           4  proc.o(.data)
+    FLASHStatus                              0x200000c4   Data           1  proc.o(.data)
+    lstVolt1                                 0x200000c6   Data           2  proc.o(.data)
+    votick                                   0x200000c8   Data           1  proc.o(.data)
+    time                                     0x200000ca   Data           2  proc.o(.data)
+    ledtime                                  0x200000cc   Data           2  proc.o(.data)
+    ledon                                    0x200000ce   Data           1  proc.o(.data)
+    Alarm1                                   0x200000cf   Data           1  proc.o(.data)
+    Alarm2                                   0x200000d0   Data           1  proc.o(.data)
+    tempdata                                 0x200000d4   Data          13  n32g030_it.o(.bss)
+    co2history                               0x200000e2   Data          10  n32g030_it.o(.bss)
+    recbit                                   0x200000ec   Data          10  n32g030_it.o(.bss)
+    g_tModS                                  0x200000f6   Data         163  modbus_slave.o(.bss)
+    g_tVar                                   0x2000019a   Data          14  modbus_slave.o(.bss)
+    g_tPrint                                 0x200001a8   Data         160  modbus_slave.o(.bss)
+    RegularConvData_Tab                      0x20000248   Data         320  init.o(.bss)
+    RegularConvData_Tab2                     0x20000388   Data          20  init.o(.bss)
+    CpuID                                    0x2000039c   Data          12  proc.o(.bss)
+    cpuID                                    0x200003a8   Data          12  proc.o(.bss)
+    __initial_sp                             0x200007b8   Data           0  startup_n32g030.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x080000c1
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001f40, Max: 0x00008000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001e6c, Max: 0x00008000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x000000c0   Data   RO           61    RESET               startup_n32g030.o
+    0x080000c0   0x080000c0   0x00000000   Code   RO         1112  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x080000c0   0x080000c0   0x00000004   Code   RO         1133    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x080000c4   0x080000c4   0x00000004   Code   RO         1136    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         1138    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         1140    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x080000c8   0x080000c8   0x00000008   Code   RO         1141    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         1143    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         1145    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x080000d0   0x080000d0   0x00000004   Code   RO         1134    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x080000d4   0x080000d4   0x0000001c   Code   RO           62    .text               startup_n32g030.o
+    0x080000f0   0x080000f0   0x00000068   Code   RO         1094    .text               HSI_Trim_Initail.lib(bsp_hsi.o)
+    0x08000158   0x08000158   0x0000002c   Code   RO         1115    .text               mc_p.l(uidiv.o)
+    0x08000184   0x08000184   0x00000028   Code   RO         1117    .text               mc_p.l(idiv.o)
+    0x080001ac   0x080001ac   0x00000024   Code   RO         1119    .text               mc_p.l(memcpya.o)
+    0x080001d0   0x080001d0   0x000000b2   Code   RO         1123    .text               mf_p.l(fadd.o)
+    0x08000282   0x08000282   0x0000007a   Code   RO         1125    .text               mf_p.l(fmul.o)
+    0x080002fc   0x080002fc   0x0000007c   Code   RO         1127    .text               mf_p.l(fdiv.o)
+    0x08000378   0x08000378   0x0000000e   Code   RO         1129    .text               mf_p.l(ffltui.o)
+    0x08000386   0x08000386   0x00000028   Code   RO         1131    .text               mf_p.l(ffixui.o)
+    0x080003ae   0x080003ae   0x00000000   Code   RO         1147    .text               mc_p.l(iusefp.o)
+    0x080003ae   0x080003ae   0x00000082   Code   RO         1148    .text               mf_p.l(fepilogue.o)
+    0x08000430   0x08000430   0x00000024   Code   RO         1150    .text               mc_p.l(init.o)
+    0x08000454   0x08000454   0x0000000c   Code   RO          295    i.BEBufToUint16     modbus_slave.o
+    0x08000460   0x08000460   0x00000038   Code   RO          296    i.CRC16_Modbus      modbus_slave.o
+    0x08000498   0x08000498   0x00000090   Code   RO          129    i.EXTI0_1_IRQHandler  n32g030_it.o
+    0x08000528   0x08000528   0x00000010   Code   RO          696    i.FLASH_ClearFlag   flash.o
+    0x08000538   0x08000538   0x00000058   Code   RO          701    i.FLASH_EraseOnePage  flash.o
+    0x08000590   0x08000590   0x0000003c   Code   RO          706    i.FLASH_GetSTS      flash.o
+    0x080005cc   0x080005cc   0x00000014   Code   RO          710    i.FLASH_Lock        flash.o
+    0x080005e0   0x080005e0   0x00000050   Code   RO          714    i.FLASH_ProgramWord  flash.o
+    0x08000630   0x08000630   0x00000024   Code   RO          718    i.FLASH_Unlock      flash.o
+    0x08000654   0x08000654   0x00000028   Code   RO          719    i.FLASH_WaitForLastOpt  flash.o
+    0x0800067c   0x0800067c   0x00000094   Code   RO          852    i.FlashCheck        proc.o
+    0x08000710   0x08000710   0x00000078   Code   RO          553    i.GPIOInit          init.o
+    0x08000788   0x08000788   0x00000044   Code   RO          853    i.GetLockCode       proc.o
+    0x080007cc   0x080007cc   0x00000224   Code   RO          854    i.GetVolt           proc.o
+    0x080009f0   0x080009f0   0x00000004   Code   RO          130    i.HardFault_Handler  n32g030_it.o
+    0x080009f4   0x080009f4   0x0000002e   Code   RO          554    i.InitALL           init.o
+    0x08000a22   0x08000a22   0x00000002   PAD
+    0x08000a24   0x08000a24   0x00000140   Code   RO          131    i.LPTIM_TIM6_IRQHandler  n32g030_it.o
+    0x08000b64   0x08000b64   0x00000124   Code   RO          297    i.MODS_03H          modbus_slave.o
+    0x08000c88   0x08000c88   0x0000005c   Code   RO          298    i.MODS_06H          modbus_slave.o
+    0x08000ce4   0x08000ce4   0x00000038   Code   RO          299    i.MODS_AnalyzeApp   modbus_slave.o
+    0x08000d1c   0x08000d1c   0x0000005c   Code   RO          300    i.MODS_Poll         modbus_slave.o
+    0x08000d78   0x08000d78   0x000000c0   Code   RO          301    i.MODS_ReadRegValue  modbus_slave.o
+    0x08000e38   0x08000e38   0x00000060   Code   RO          302    i.MODS_ReciveNew    modbus_slave.o
+    0x08000e98   0x08000e98   0x00000030   Code   RO          304    i.MODS_SendAckErr   modbus_slave.o
+    0x08000ec8   0x08000ec8   0x00000024   Code   RO          305    i.MODS_SendAckOk    modbus_slave.o
+    0x08000eec   0x08000eec   0x00000058   Code   RO          306    i.MODS_SendWithCRC  modbus_slave.o
+    0x08000f44   0x08000f44   0x0000003c   Code   RO          307    i.MODS_WriteRegValue  modbus_slave.o
+    0x08000f80   0x08000f80   0x00000002   Code   RO          132    i.NMI_Handler       n32g030_it.o
+    0x08000f82   0x08000f82   0x00000002   PAD
+    0x08000f84   0x08000f84   0x00000014   Code   RO          555    i.NVIC_EnableIRQ    init.o
+    0x08000f98   0x08000f98   0x00000078   Code   RO          556    i.NVIC_SetPriority  init.o
+    0x08001010   0x08001010   0x00000002   Code   RO          133    i.PendSV_Handler    n32g030_it.o
+    0x08001012   0x08001012   0x00000002   PAD
+    0x08001014   0x08001014   0x00000054   Code   RO          855    i.RS485_SendBuf     proc.o
+    0x08001068   0x08001068   0x000001ac   Code   RO          856    i.ReadInf           proc.o
+    0x08001214   0x08001214   0x0000008c   Code   RO          857    i.ResetInf          proc.o
+    0x080012a0   0x080012a0   0x00000002   Code   RO          134    i.SVC_Handler       n32g030_it.o
+    0x080012a2   0x080012a2   0x00000002   PAD
+    0x080012a4   0x080012a4   0x000000f0   Code   RO            2    i.SetSysClock       system_n32g030.o
+    0x08001394   0x08001394   0x00000002   Code   RO          135    i.SysTick_Handler   n32g030_it.o
+    0x08001396   0x08001396   0x00000002   PAD
+    0x08001398   0x08001398   0x00000074   Code   RO            4    i.SystemInit        system_n32g030.o
+    0x0800140c   0x0800140c   0x0000006c   Code   RO          561    i.TIM3_Conf         init.o
+    0x08001478   0x08001478   0x0000004c   Code   RO          136    i.TIM3_IRQHandler   n32g030_it.o
+    0x080014c4   0x080014c4   0x00000214   Code   RO          569    i.USART1_Config     init.o
+    0x080016d8   0x080016d8   0x00000020   Code   RO          137    i.USART1_IRQHandler  n32g030_it.o
+    0x080016f8   0x080016f8   0x000001b4   Code   RO          138    i.USART1r           n32g030_it.o
+    0x080018ac   0x080018ac   0x00000240   Code   RO          860    i.WriteInf          proc.o
+    0x08001aec   0x08001aec   0x0000001c   Code   RO          375    i.__ARM_common_switch8  modbus_slave.o
+    0x08001b08   0x08001b08   0x0000000e   Code   RO         1154    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x08001b16   0x08001b16   0x00000002   Code   RO         1155    i.__scatterload_null  mc_p.l(handlers.o)
+    0x08001b18   0x08001b18   0x0000000e   Code   RO         1156    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x08001b26   0x08001b26   0x00000002   PAD
+    0x08001b28   0x08001b28   0x00000054   Code   RO          139    i.closeexit         n32g030_it.o
+    0x08001b7c   0x08001b7c   0x00000044   Code   RO          226    i.delay_init        delay.o
+    0x08001bc0   0x08001bc0   0x00000050   Code   RO          227    i.delay_ms          delay.o
+    0x08001c10   0x08001c10   0x0000000c   Code   RO           67    i.main              main.o
+    0x08001c1c   0x08001c1c   0x00000030   Code   RO          140    i.openexit          n32g030_it.o
+    0x08001c4c   0x08001c4c   0x00000200   Data   RO          309    .constdata          modbus_slave.o
+    0x08001e4c   0x08001e4c   0x00000020   Data   RO         1152    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001e6c, Size: 0x000007b8, Max: 0x00002000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x08001e6c   0x00000016   Data   RW          142    .data               n32g030_it.o
+    0x20000016   0x08001e82   0x00000004   Data   RW          229    .data               delay.o
+    0x2000001a   0x08001e86   0x00000001   Data   RW          310    .data               modbus_slave.o
+    0x2000001b   0x08001e87   0x00000001   PAD
+    0x2000001c   0x08001e88   0x0000004b   Data   RW          414    .data               sht20.o
+    0x20000067   0x08001ed3   0x00000001   PAD
+    0x20000068   0x08001ed4   0x0000000c   Data   RW          573    .data               init.o
+    0x20000074   0x08001ee0   0x0000005d   Data   RW          862    .data               proc.o
+    0x200000d1   0x08001f3d   0x00000003   PAD
+    0x200000d4        -       0x00000022   Zero   RW          141    .bss                n32g030_it.o
+    0x200000f6        -       0x00000152   Zero   RW          308    .bss                modbus_slave.o
+    0x20000248        -       0x00000154   Zero   RW          572    .bss                init.o
+    0x2000039c        -       0x00000018   Zero   RW          861    .bss                proc.o
+    0x200003b4   0x08001f3d   0x00000004   PAD
+    0x200003b8        -       0x00000400   Zero   RW           59    STACK               startup_n32g030.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       148         28          0          4          0       1200   delay.o
+       340         48          0          0          0       4949   flash.o
+       946         58          0         12        340       9657   init.o
+        12          0          0          0          0       5151   main.o
+      1148        132        512          1        338      14088   modbus_slave.o
+      1152        110          0         22         34       6648   n32g030_it.o
+      1992        318          0         93         24       6174   proc.o
+         0          0          0         75          0       2414   sht20.o
+        28          8        192          0       1024        648   startup_n32g030.o
+       356         40          0          0          0     173949   system_n32g030.o
+
+    ----------------------------------------------------------------------
+      6132        742        736        212       1764     224878   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        10          0          0          5          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+       104         16          0          0          0       1016   bsp_hsi.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        40          0          0          0          0         72   idiv.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        36          0          0          0          0         60   memcpya.o
+        44          0          0          0          0         72   uidiv.o
+       178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
+       130          0          0          0          0        144   fepilogue.o
+        40          0          0          0          0         60   ffixui.o
+        14          0          0          0          0         68   ffltui.o
+       122          0          0          0          0         72   fmul.o
+
+    ----------------------------------------------------------------------
+       920         32          0          0          0       1812   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       104         16          0          0          0       1016   HSI_Trim_Initail.lib
+       206         16          0          0          0        272   mc_p.l
+       608          0          0          0          0        524   mf_p.l
+
+    ----------------------------------------------------------------------
+       920         32          0          0          0       1812   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      7052        774        736        212       1764     224466   Grand Totals
+      7052        774        736        212       1764     224466   ELF Image Totals
+      7052        774        736        212          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 7788 (   7.61kB)
+    Total RW  Size (RW Data + ZI Data)              1976 (   1.93kB)
+    Total ROM Size (Code + RO Data + RW Data)       8000 (   7.81kB)
+
+==============================================================================
+

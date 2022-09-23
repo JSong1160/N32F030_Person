@@ -1,0 +1,11 @@
+.\objects\delay.o: ..\HARDWARE\delay.c
+.\objects\delay.o: ..\HARDWARE\delay.h
+.\objects\delay.o: ..\CMSIS\device\n32g030.h
+.\objects\delay.o: ..\CMSIS\core\core_cm0.h
+.\objects\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\delay.o: ..\CMSIS\core\core_cmInstr.h
+.\objects\delay.o: ..\CMSIS\core\core_cmFunc.h
+.\objects\delay.o: ..\CMSIS\device\system_n32g030.h
+.\objects\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\delay.o: ..\CMSIS\device\n32g030_conf.h
+.\objects\delay.o: ..\CMSIS\device\n32g030.h
